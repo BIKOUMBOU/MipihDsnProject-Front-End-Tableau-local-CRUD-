@@ -1,0 +1,77 @@
+<ng-container>
+    <div class="card-header -xl ">
+        <div class="table-responsive -xl">
+            <table id="dtHorizontalExample"
+                class="table table-hover table-striped table-bordered table-sm table-wrapper-scroll-y my-custom-scrollbar"
+                cellspacing="0" width="100%">
+                <thead class="center-thead-dark">
+
+                    <tr>
+                        <th class="text-center th-sm">Id </th>
+                        <th class="text-center th-sm">Priorité </th>
+                        <th class="text-center th-sm">Nom </th>
+                        <th class="text-center th-sm">Siren </th>
+                        <th class="text-center th-sm">StatusInstal </th>
+                        <th class="text-center th-sm">Hebergement </th>
+                        <th class="text-center th-sm">Acces </th>
+                        <th class="text-center th-sm">ResProjet </th>
+                        <th class="text-center th-sm">ConsulDsn </th>
+                        <th class="text-center th-sm">VersAgirh </th>
+                        <th class="text-center th-sm">Versprodige </th>
+                        <th class="text-center th-sm">Ifp </th>
+                        <th class="text-center th-sm">Mirth </th>
+                        <th class="text-center th-sm">WebserPH7 </th>
+                        <th class="text-center th-sm">ConfigAgirh </th>
+                        <th class="text-center th-sm">ConfigProdige </th>
+                        <th class="text-center th-sm">NomencdesAbsences</th>
+                        <th class="text-center th-sm">NomencdesEmplois </th>
+                        <th class="text-center th-sm">NomencdeStatuts </th>
+                        <th class="text-center">ACTIONS</th>
+                        <th class="text-center">ACTIONS</th>
+                        <th class="text-center">ACTIONS</th>
+                        <th class="text-center">ACTIONS</th>
+                    </tr>
+
+                </thead>
+                <tbody>
+                    
+                    <tr *ngFor="let site of sites">
+
+                        <td>{{site.id}} </td>
+                        <td>{{site.priorite}} </td>
+                        <td>{{site.nom}} </td>
+                        <td>{{site.siren}} </td>
+                        <td>{{site.statusinstal}} </td>
+                        <td>{{site.hebergement}} </td>
+                        <td>{{site.acces}} </td>
+                        <td>{{site.resprojet}} </td>
+                        <td>{{site.consuldsn}} </td>
+                        <td>{{site.versagirh}} </td>
+                        <td>{{site.versprodige}} </td>
+                        <td>{{site.ifp}} </td>
+                        <td>{{site.mirth}} </td>
+                        <td>{{site.webserph7}} </td>
+                        <td>{{site.configagirh}} </td>
+                        <td>{{site.configprodige}} </td>
+                        <td>{{site.nomencdesabsences}} </td>
+                        <td>{{site.nomencdesemplois}} </td>
+                        <td>{{site.nomencdestatuts}} </td>
+                        <td>
+
+                             <button class="btn btn-info ml-2" [routerLink]="['/updateSite',site.id]">
+                               <span class="fa fa-edit"></span>
+                             </button>
+
+                             <button class="btn btn-danger ml-2" (click)="supprimerSite(s)">
+                               <span class="fa fa-trash-o"></span>
+                             </button>
+
+                        </td>
+
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+</ng-container>

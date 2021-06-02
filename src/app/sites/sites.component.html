@@ -1,0 +1,204 @@
+<ng-container>
+    <div class="card-header -xl ">
+        <div class="table-responsive -xl">
+            <table id="dtHorizontalExample"
+                class="table table-hover table-striped table-bordered table-sm table-wrapper-scroll-y my-custom-scrollbar"
+                cellspacing="0" width="100%">
+                <thead class="center-thead-dark">
+
+                    <tr>
+                        <th class="text-center th-sm">Id </th>
+                        <th class="text-center th-sm">Priorité </th>
+                        <th class="text-center th-sm">Nom </th>
+                        <th class="text-center th-sm">Siren </th>
+                        <th class="text-center th-sm">StatusInstal </th>
+                        <th class="text-center th-sm">Hebergement </th>
+                        <th class="text-center th-sm">Acces </th>
+                        <th class="text-center th-sm">ResProjet </th>
+                        <th class="text-center th-sm">ConsulDsn </th>
+                        <th class="text-center th-sm">VersAgirh </th>
+                        <th class="text-center th-sm">Versprodige </th>
+                        <th class="text-center th-sm">Ifp </th>
+                        <th class="text-center th-sm">Mirth </th>
+                        <th class="text-center th-sm">WebserPH7 </th>
+                        <th class="text-center th-sm">ConfigAgirh </th>
+                        <th class="text-center th-sm">ConfigProdige </th>
+                        <th class="text-center th-sm">NomencdesAbsences</th>
+                        <th class="text-center th-sm">NomencdesEmplois </th>
+                        <th class="text-center th-sm">NomencdeStatuts </th>
+
+                 <!--        <th class="text-center th-sm"> Année </th>
+                        <th class="text-center th-sm"> Icc </th>
+                        <th class="text-center th-sm"> Corresp_PASRAU </th>
+                        <th class="text-center th-sm"> Téléphone_PASRAU </th>
+                        <th class="text-center th-sm"> Email PASRAU </th>
+                        <th class="text-center th-sm"> Siret PASRAU </th>
+                        <th class="text-center th-sm"> Ofi signé </th>
+                        <th class="text-center th-sm"> Site Support </th>
+                        <th class="text-center th-sm"> Exploit Paie </th>
+                        <th class="text-center th-sm"> Heber_Agirh </th>
+                        <th class="text-center th-sm"> Heber_Prodige </th>
+                        <th class="text-center th-sm"> Prodige installé </th>
+                        <th class="text-center th-sm"> Base à Installer </th>
+                        <th class="text-center th-sm"> Module Rh </th>
+                        <th class="text-center th-sm"> Instal_Echange </th>
+                        <th class="text-center th-sm"> Multiducs </th>
+                        <th class="text-center th-sm"> Date_Réunion_Lanc </th>
+                        <th class="text-center th-sm"> Date_kit_Contrôle </th>
+                        <th class="text-center th-sm"> Nbre_Anomalies </th>
+                        <th class="text-center th-sm"> Date_Formation </th> --> 
+
+
+                        <th class="text-center">ACTIONS</th>
+                    </tr>
+
+                </thead>
+                <tbody>
+
+                    <tr *ngFor="let site of sites">
+
+                        <td>{{site.id}} </td>
+                        <td>{{site.priorite}} </td>
+                        <td>{{site.nom}} </td>
+                        <td>{{site.siren}} </td>
+                        <td>{{site.statusinstal}} </td>
+                        <td>{{site.hebergement}} </td>
+                        <td>{{site.acces}} </td>
+                        <td>{{site.resprojet}} </td>
+                        <td>{{site.consuldsn}} </td>
+                        <td>{{site.versagirh}} </td>
+                        <td>{{site.versprodige}} </td>
+                        <td>{{site.ifp}} </td>
+                        <td>{{site.mirth}} </td>
+                        <td>{{site.webserph7}} </td>
+                        <td>{{site.configagirh}} </td>
+                        <td>{{site.configprodige}} </td>
+                        <td>{{site.nomencdesabsences}} </td>
+                        <td>{{site.nomencdesemplois}} </td>
+                        <td>{{site.nomencdestatuts}} </td>
+<!-- 
+                        <td> {{s.annee}} </td>
+                        <td> {{s.icc}} </td>
+                        <td> {{s.corresppasrau}} </td>
+                        <td> {{s.telpasreau}} </td>
+                        <td> {{s.emailpasreau}} </td>
+                        <td> {{s.siretpasreau}} </td>
+                        <td> {{s.ofisigne}} </td>
+                        <td> {{s.sitesupport}} </td>
+                        <td> {{s.exploitpaie}} </td>
+                        <td> {{s.heberagirh}} </td>
+                        <td> {{s.heberprodige}} </td>
+                        <td> {{s.instalprodige}} </td>
+                        <td> {{s.baseaintal}} </td>
+                        <td> {{s.modulerh}} </td>
+                        <td> {{s.instalech}} </td>
+                        <td> {{s.multiducs}} </td>
+                        <td> {{s.datereunionlanc}} </td>
+                        <td> {{s.datekitdecontrole}} </td>
+                        <td> {{s.nbreanomalies}} </td>
+                        <td> {{s.dateformation}} </td> -->
+                        
+                        <td>
+                            <button class="btn btn-info ml-2" [routerLink]="['/updateSite',site.id]">
+                                <span class="fa fa-edit"></span>
+                            </button>
+
+                            <button class="btn btn-danger ml-2" (click)="onSupprimerSite()">
+                                <span class="fa fa-trash-o"></span>
+                            </button>
+                        </td>
+
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+</ng-container>
+
+<!-- <div class="card-header -xl">
+            <div class="table-responsive -xl">
+                <table class="table table-striped">
+                    <thead class="thead-dark">
+
+                        <tr>
+                            <th>Id </th>
+                            <th>Priorité </th>
+                            <th>Nom </th>
+                            <th>Siren </th>
+                            <th>StatusInstal </th>
+                            <th>Hebergement </th>
+                            <th>Acces </th>
+                            <th>ResProjet </th>
+                            <th>ConsulDsn </th>
+                            <th>VersAgirh </th>
+                            <th>VersProdige </th>
+                            <th>Ifp </th>
+                            <th>Mirth </th>
+                            <th>WebserPH7 </th>
+                            <th>ConfigAgirh </th>
+                            <th>ConfigProdige </th>
+                            <th>NomencdesAbsences</th>
+                            <th>NomencdesEmplois </th>
+                            <th>NomencdeStatuts </th>
+                            <th>ACTIONS </th>
+                            <th>ACTIONS </th>
+                        </tr>
+                    </thead>
+
+                    <tbody *ngFor="let site of sites">
+
+                        <tr>
+                            <td>{{site.priorite}} </td>
+                            <td>{{site.nom}} </td>
+                            <td>{{site.siren}} </td>
+                            <td>{{site.Statusinstal}} </td>
+                            <td>{{site.hebergement}} </td>
+                            <td>{{site.acces}} </td>
+                            <td>{{site.resrojet}} </td>
+                            <td>{{site.Consuldsn}} </td>
+                            <td>{{site.versagirh}} </td>
+                            <td>{{site.versprodige}} </td>
+                            <td>{{site.ifp}} </td>
+                            <td>{{site.mirth}} </td>
+                            <td>{{site.webserph7}} </td>
+                            <td>{{site.configagirh}} </td>
+                            <td>{{site.configprodige}} </td>
+                            <td>{{site.nomencdesabsences}} </td>
+                            <td>{{site.nomencdesemplois}} </td>
+                            <td>{{site.nomencdestatuts}} </td>
+                            <td> </td>
+
+                            <td><a class="btn btn-success" [routerLink]="['/updateSite',site.id]">Modifier</a></td>
+
+                            <td><a class="btn btn-danger" (click)="supprimerSite(site)">Supprimer</a></td>
+
+                        </tr>
+                    </tbody>
+                </table>
+    
+    </div>
+
+<div *ngFor="let site of sites">
+    <div>{{site.idSite}} </div>
+    <div>{{site.Priorite}} </div>
+    <div>{{site.Nom}} </div>
+    <div>{{site.Siren}} </div>
+    <div>{{site.StatutInstal}} </div>
+    <div>{{site.Hebergement}} </div>
+    <div>{{site.Acces}} </div>
+    <div>{{site.ResProjet}} </div>
+    <div>{{site.ConsulDsn}} </div>
+    <div>{{site.VersAgirh}} </div>
+    <div>{{site.VersProdige}} </div>
+    <div>{{site.Ifp}} </div>
+    <div>{{site.Mirth}} </div>
+    <div>{{site.WebserPH7}} </div>
+    <div>{{site.ConfigAgirh}} </div>
+    <div>{{site.ConfigProdige}} </div>
+    <div>{{site.NomencdesAbsences}} </div>
+    <div>{{site.NomencdesEmplois}} </div>
+    <div>{{site.NomencdeStatuts}} </div>
+    <div>{{site.ACTIONS}} </div> 
+
+</div> -->
