@@ -3,11 +3,11 @@ import { Site } from '../model/site.model';
 import {environment} from '../../environments/environment';
 import {Observable} from 'rxjs';
 import {HttpClient, HttpHeaders, HttpClientModule} from '@angular/common/http';
-
+/* 
 const httpOptions = { 
   headers: new HttpHeaders({'Content-Type': 'application/json',})
 };
-const baseUrl = `${environment.apiUrl}/sites`;
+const baseUrl = `${environment.apiUrl}/sites`; */
 
 
 @Injectable({
@@ -17,38 +17,45 @@ const baseUrl = `${environment.apiUrl}/sites`;
 export class SiteService {
 
 
-  /* private apiServerUrl=environment.apiBaseUrl; */
+  private apiServerUrl=environment.apiBaseUrl; 
 
   constructor(private http: HttpClient) {}
 
 
    listerAllSites(): Observable<Site[]>{
-    return this.http.get<Site[]>(baseUrl);
-   }
+    return this.http.get<Site[]>(`${this.apiServerUrl}/sites`);
+  }
+
 
    listerAllSite(id: number): Observable<Site[]>{
-    return this.http.get<Site[]>(`${baseUrl}/site/+id`);
-   }
+   
+   return this.http.get<Site[]>(`${this.apiServerUrl}/site/{id}`);
+  }
    
 
    nouveauSite(site: Site):Observable<Site>{ 
-    return this.http.post<Site>(`${baseUrl}/addSite`,site,);
-    }
+    return this.http.post<Site>(`${this.apiServerUrl}/addSite`,site);
+  }
 
    nouveauSites(sites:Site[]):Observable<Site[]>{
-    return this.http.post<Site[]>(`${baseUrl}/addSites`,sites);
-}
+    return this.http.post<Site[]>(`${this.apiServerUrl}/addSites`,sites);
+  }
 
 
    updateSite(site:Site):Observable<Site>{
-      return this.http.put<Site>(`${baseUrl}/updateSite.id`,site);
+    return this.http.put<Site>(`${this.apiServerUrl}/updateSite`,site);
   }
 
    supprimerSite(id: number) { 
-     return this.http.delete(`${baseUrl}/${id}/delete)`,{responseType: 'text'});
+    return this.http.delete<Site>(`${this.apiServerUrl}/delete/${id}`);
+  } 
+  
 
-   }
 
+/*   return this.http.delete(`${this.apiServerUrl}/deleteSite/${id}`,{responseType: 'text'});
+} 
+ 
+ */
 
 /*   consulterSite(id: number): Observable<Site> { 
     const url =`${this.apiServerUrl}/${id}`; 
@@ -73,6 +80,8 @@ export class SiteService{
   public getSites():Observable<Site[]>{
       return this.http.get<Site[]>(`${this.apiServerUrl}/sites`);
   }
+
+
   public addSites(sites:Site[]):Observable<Site[]>{
       return this.http.post<Site[]>(`${this.apiServerUrl}/addSites`,sites);
   }

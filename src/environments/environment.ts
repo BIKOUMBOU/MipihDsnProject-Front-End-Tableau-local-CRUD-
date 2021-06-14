@@ -5,11 +5,12 @@
 /* export const environment = {
   production: false
 }; */
-/* 
+
+
 export const environment = {
   production: false,
   apiBaseUrl: 'http://localhost:9192'
-};  */
+};  
 
 
 /* export const environment = {
@@ -24,12 +25,12 @@ export const environment = {
 }; 
  */
 
-export const environment = {
+/* export const environment = {
   production: false,
   apiUrl: 'http://localhost:9192'
 };
 
-
+ */
 
 
 /*

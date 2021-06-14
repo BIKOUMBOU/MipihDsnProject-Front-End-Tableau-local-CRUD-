@@ -14,7 +14,7 @@ import { catchError, map, startWith } from 'rxjs/operators';
 
 export class SitesComponent implements OnInit {
 
-sites: Site[]; //Un tableau de sites
+  sites: Site[]; //Un tableau de sites
   http: any;
 
   constructor(private siteService : SiteService,
@@ -23,36 +23,40 @@ sites: Site[]; //Un tableau de sites
 
   listerAllSites(){
     
-   this.siteService.listerAllSites().subscribe(sites => {
-    console.log(sites);
-    this.sites = sites;
-  });
-};
+    this.siteService.listerAllSites().subscribe(sites => {
+     console.log(sites);
+     this.sites = sites;
+   });
+ };
+
 
 ngOnInit(): void {
-  this.router.events.subscribe(Sites => {
-    this.listerAllSites();
-  });
-
+  this.siteService.listerAllSites().subscribe(sites=>{
+    console.log(sites)
+      this.sites=sites;
+    },
+    (error:HttpErrorResponse)=>{
+      alert(error.message);
+    }
+  )
 }
-  
-  SupprimerSite(id: number): void {
-    console.log("cliqué"); 
-    let conf = confirm("Etes-vous sûr de vouloir supprimer cet enregistrement ?"); 
-    if (conf) this.siteService.supprimerSite(id)
-        .subscribe(
-          (response: string)=> {
-       console.log("site supprimé"); 
-       this.listerAllSites();
 
-      },
-      (error:HttpErrorResponse)=>{
-        alert(error.message);
-      }
-    );
 
-   } 
+SupprimerSite(id: number){
+
+	console.log("cliqué"); 
+  console.log (id);
+
+ /*  let conf = confirm("Etes-vous sûr de vouloir supprimer cet enregistrement ?"); 
+  if (conf)  */
+  this.siteService.supprimerSite(id).subscribe(() => {
+     console.log("site supprimé");
+    }); 
+
+     this.router.navigate(['sites']).then(() => {
+      window.location.reload();
+    });
 
   }
 
-
+}
