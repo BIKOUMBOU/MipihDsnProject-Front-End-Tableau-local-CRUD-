@@ -41,22 +41,22 @@ ngOnInit(): void {
   )
 }
 
-
 SupprimerSite(id: number){
 
 	console.log("cliqué"); 
-  console.log (id);
-
- /*  let conf = confirm("Etes-vous sûr de vouloir supprimer cet enregistrement ?"); 
+   console.log (id);
+/* 
+ let conf = confirm("Etes-vous sûr de vouloir supprimer cet enregistrement ?"); 
+  
   if (conf)  */
   this.siteService.supprimerSite(id).subscribe(() => {
      console.log("site supprimé");
     }); 
-
+     
      this.router.navigate(['sites']).then(() => {
       window.location.reload();
     });
-
+    
   }
 
 }

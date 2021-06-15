@@ -7,8 +7,6 @@ import { ListSiteComponent } from './list-site/list-site.component';
 import { UpdateSiteComponent } from './update-site/update-site.component';
 
 
-
-
 const routes: Routes = [
   {path:"sites", component:SitesComponent},
   {path:"add-site", component:AddSiteComponent},

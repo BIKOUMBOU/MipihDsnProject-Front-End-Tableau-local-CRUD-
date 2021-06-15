@@ -22,10 +22,19 @@ export class ListSiteComponent implements OnInit {
   }
 
 
+  listerAllSites(){
+    
+    this.siteService.listerAllSites().subscribe(sites => {
+     console.log(sites);
+     this.sites = sites;
+   });
+ };
+
+
 ngOnInit(): void {
-  this.siteService.listerAllSites().subscribe(
-    (response:Site[])=>{
-      this.sites=response;
+  this.siteService.listerAllSites().subscribe(sites=>{
+    console.log(sites)
+      this.sites=sites;
     },
     (error:HttpErrorResponse)=>{
       alert(error.message);
@@ -33,21 +42,22 @@ ngOnInit(): void {
   )
 }
 
-/*   supprimerSite(s: Site) { 
-    let conf = confirm("Etes-vous sûr de vouloir supprimer cet enregistrement ?"); 
-    if (conf) this.siteService.supprimerSite(s.id).subscribe(() => {
-       console.log("site supprimé"); 
-       this.SupprimerSiteDuTableau(s);
-      }); 
-      
-    }
+SupprimerSite(id: number){
+
+	console.log("cliqué"); 
+   console.log (id);
+/* 
+ let conf = confirm("Etes-vous sûr de vouloir supprimer cet enregistrement ?"); 
+  
+  if (conf)  */
+  this.siteService.supprimerSite(id).subscribe(() => {
+     console.log("site supprimé");
+    }); 
+     
+     this.router.navigate(['sites']).then(() => {
+      window.location.reload();
+    });
     
-    SupprimerSiteDuTableau(sit : Site) { 
-      this.sites.forEach((cur, index) => { 
-        if(sit.id=== cur.id) { 
-          this.sites.splice(index, 1); 
-         } 
-       }); 
-     } */
+  }
 
 }
