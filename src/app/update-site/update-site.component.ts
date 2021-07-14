@@ -18,12 +18,12 @@ import { Site } from '../model/site.model';
 
   ngOnInit(): void {
    this.siteService.consulterSite(this.activatedRoute.snapshot.params.id).
-    subscribe( sit =>{ 
+    subscribe(sit =>{ 
       this.currentSite = sit; });  
     }
     
-
     updateSite() { 
+      console.log("cliqué");
       this.siteService.updateSite(this.currentSite).subscribe(sit=> { 
         this.router.navigate(['sites']); },
         (error) => { alert("Problème lors de la modification !"); } 
