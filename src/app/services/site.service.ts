@@ -10,6 +10,7 @@ const httpOptions = {
 const baseUrl = `${environment.apiUrl}/sites`; */
 
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -27,76 +28,85 @@ export class SiteService {
   }
 
 
-   listerAllSite(id: number): Observable<Site[]>{
+   listerSites(): Observable<Site[]>{
    
-   return this.http.get<Site[]>(`${this.apiServerUrl}/site/{id}`);
-  }
-   
-
-   nouveauSite(site: Site):Observable<Site>{ 
-    return this.http.post<Site>(`${this.apiServerUrl}/addSite`,site);
+   return this.http.get<Site[]>(`${this.apiServerUrl}/sites`);
   }
 
+  listerSite(id: number): Observable<Site[]>{
+   
+    return this.http.get<Site[]>(`${this.apiServerUrl}/site/${id}`);
+   }
+
+ 
    nouveauSites(sites:Site[]):Observable<Site[]>{
     return this.http.post<Site[]>(`${this.apiServerUrl}/addSites`,sites);
   }
 
 
+  nouveauSite(site: Site):Observable<Site>{ 
+    return this.http.post<Site>(`${this.apiServerUrl}/addSite`,site);
+  }
+
+  
    updateSite(site:Site):Observable<Site>{
     return this.http.put<Site>(`${this.apiServerUrl}/updateSite`,site);
   }
 
-   supprimerSite(id: number) { 
-    return this.http.delete<Site>(`${this.apiServerUrl}/delete/${id}`);
-  } 
+   supprimerSite(id: number){
+    /* return this.http.delete(`${this.apiServerUrl}/delete/${id}`,{responseType: 'text'}); */
+    return this.http.delete<void>(`${this.apiServerUrl}/delete/${id}`);
+  }
+
+
+  consulterSite(id: number): Observable<Site>{ 
+    const url = `${this.apiServerUrl}/site/${id}`; 
+    return this.http.get<Site>(url); 
+    
+  }
   
 
 
-/*   return this.http.delete(`${this.apiServerUrl}/deleteSite/${id}`,{responseType: 'text'});
-} 
+
+
+
+/*   deleteSite(site:Site):Observable<void>{
+   
+    return this.http.delete<void>(`${this.apiServerUrl}/delete/${site.id}`);
+  } */
+
+
+
+}
+
+
+
  
- */
-
-/*   consulterSite(id: number): Observable<Site> { 
-    const url =`${this.apiServerUrl}/${id}`; 
-    return this.http.get<Site>(url); 
-   }
- */
+ 
 
 
-} 
+/* return this.http.delete(`${this.apiServerUrl}`+"/delete/"+id); */
 
 
 
 
-/* @Injectable({
-  providedIn: 'root'
-})
-export class SiteService{
-
-  private apiServerUrl=environment.apiBaseUrl;
-  constructor(private http: HttpClient) {}
-
-  public getSites():Observable<Site[]>{
-      return this.http.get<Site[]>(`${this.apiServerUrl}/sites`);
-  }
 
 
-  public addSites(sites:Site[]):Observable<Site[]>{
-      return this.http.post<Site[]>(`${this.apiServerUrl}/addSites`,sites);
-  }
-
-  public addSite(site:Site[]):Observable<Site>{
-      return this.http.post<Site>(`${this.apiServerUrl}/addSite`,site);
-  }
-
-  public updateSite(site:Site):Observable<Site>{
-      return this.http.put<Site>(`${this.apiServerUrl}/updateSite`,site);
-  }
-
-  public deleteSite(site: number):Observable<Site>{
-      return this.http.delete<Site>(`${this.apiServerUrl}/deleteSite`);
-  }
 
 
-} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

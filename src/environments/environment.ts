@@ -13,24 +13,24 @@ export const environment = {
 };  
 
 
-/* export const environment = {
-  production: false,
- host:"http://localhost:9192"
-}; 
- */
-
-/* export const environment = {
+// export const environment = {
+//   production: false,
+//  host:"http://localhost:9192"
+// }; 
+ 
+/*
+export const environment = {
   production: false,
   apiURL:"http://localhost:9192"
-}; 
- */
-
-/* export const environment = {
+}; */
+ 
+/*
+export const environment = {
   production: false,
   apiUrl: 'http://localhost:9192'
 };
 
- */
+ 
 
 
 /*

@@ -99,13 +99,15 @@
                         <td> {{s.dateformation}} </td> -->
                         
                         <td>
+
                             <button class="btn btn-info ml-2" [routerLink]="['/updateSite',site.id]">
                                 <span class="fa fa-edit"></span>
                             </button>
 
-                            <button class="btn btn-danger ml-2" (click)="SupprimerSite(Site.id)">
-                                <span class="fa fa-trash-o"></span>
-                            </button>
+                            <button class="btn btn-danger ml-2" (click)="SupprimerSite(site.id)">
+                                <span class="fa fa-trash-o"></span> 
+                            </button>   
+
                         </td>
 
                     </tr>

@@ -6,8 +6,7 @@ import { Site } from '../model/site.model';
 @Component({
   selector: 'app-update-site',
   templateUrl: './update-site.component.html',
-  styles: [
-  ]
+  
  })
  export class UpdateSiteComponent implements OnInit {
 
@@ -18,10 +17,11 @@ import { Site } from '../model/site.model';
               private siteService: SiteService) {}
 
   ngOnInit(): void {
-   /*  this.siteService.consulterSite(this.activatedRoute.snapshot.params.id).
+   this.siteService.consulterSite(this.activatedRoute.snapshot.params.id).
     subscribe( sit =>{ 
-      this.currentSite = sit; });  */
+      this.currentSite = sit; });  
     }
+    
 
     updateSite() { 
       this.siteService.updateSite(this.currentSite).subscribe(sit=> { 

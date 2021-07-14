@@ -17,9 +17,7 @@ export class SitesComponent implements OnInit {
   sites: Site[]; //Un tableau de sites
   http: any;
 
-  constructor(private siteService : SiteService,
-              private router : Router,) { 
-  }
+  constructor(private siteService : SiteService,private router : Router,) {}
 
   listerAllSites(){
     
@@ -41,22 +39,39 @@ ngOnInit(): void {
   )
 }
 
-SupprimerSite(id: number){
+  SupprimerSite(id: number){
+    console.log("cliqué");
+    console.log (id);
+    let conf = confirm("Êtes-vous sûr de vouloir supprimer cet enregistrement ?"); 
+    if (conf==true)  
+    this.siteService.supprimerSite(id).subscribe(()=> {
+      console.log("site supprimé");
+     }); 
+      
+      this.router.navigate(['sites']).then(() => {
+       window.location.reload();
+     }); 
+}
 
-	console.log("cliqué"); 
-   console.log (id);
-/* 
- let conf = confirm("Etes-vous sûr de vouloir supprimer cet enregistrement ?"); 
-  
-  if (conf)  */
-  this.siteService.supprimerSite(id).subscribe(() => {
-     console.log("site supprimé");
-    }); 
-     
-     this.router.navigate(['sites']).then(() => {
-      window.location.reload();
-    });
-    
-  }
+
+AddSite(s: Site){
+  this.router.navigateByUrl("/addSite")
+}
+
+ListeSite(){
+  this.router.navigateByUrl("/listeSite")
+}
+
+updateSite(){
+  this.router.navigateByUrl("/UpdateSite")
+}
+
+
+Update(s: Site) {
+  this.router.navigateByUrl("/UpdateSite/"+s.id);
+}
 
 }
+
+
+
