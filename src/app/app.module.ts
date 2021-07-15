@@ -9,6 +9,10 @@ import { AddSiteComponent } from './add-site/add-site.component';
 import { ListSiteComponent } from './list-site/list-site.component';
 import { FormsModule } from '@angular/forms';
 import { UpdateSiteComponent } from './update-site/update-site.component';
+import { ListedifSiteComponent } from './listedif-site/listedif-site.component';
+import { ListeconsSiteComponent } from './listecons-site/listecons-site.component';
+import { ListerespSiteComponent } from './listeresp-site/listeresp-site.component';
+
 
 
 
@@ -20,7 +24,9 @@ import { UpdateSiteComponent } from './update-site/update-site.component';
     AddSiteComponent,
     ListSiteComponent,
     UpdateSiteComponent,
-  
+    ListedifSiteComponent,
+    ListeconsSiteComponent,
+    ListerespSiteComponent,
   
     
   ],

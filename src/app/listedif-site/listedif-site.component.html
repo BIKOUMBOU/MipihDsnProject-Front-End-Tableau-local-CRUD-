@@ -1,0 +1,103 @@
+<nav class="navbar navbar-expand-sm bg-darck navbar-dark">
+
+    <!-- <ul class="navbar navbar-nav ml-auto">
+		<li>
+			<form #f="ngForm" (ngSubmit)="rechercherSites()" class="form-inline">
+				<div class="form-group">
+					<input ngModel name="keyword" type="text">
+					<button class="btn btn-sm btn-outline-info ml-2">
+						<span class="fa fa-search"></span>
+					</button>
+				</div>
+			</form>
+		</li>
+
+	</ul> -->
+
+</nav>
+
+
+<ng-container>
+    <div class="card-header -xl ">
+        <div class="table-responsive -xl">
+            <table id="dtHorizontalExample"
+                class="table table-hover table-striped table-bordered table-sm table-wrapper-scroll-y my-custom-scrollbar"
+                cellspacing="0" width="100%">
+                <thead class="center-thead-dark">
+
+                    <tr>
+
+                        <!-- --Diffuseurs techniques-- -->
+
+                        <th class="text-center th-sm"> Id </th>
+                        <th class="text-center th-sm"> Priorité </th>
+                        <th class="text-center th-sm"> Nom </th>
+                        <th class="text-center th-sm"> Siren </th>
+                        <th class="text-center th-sm"> StatusInstal </th>
+                        <th class="text-center th-sm"> Hebergement </th>
+                        <th class="text-center th-sm"> Acces </th>
+                        <th class="text-center th-sm"> ResProjet </th>
+                        <th class="text-center th-sm"> ConsulDsn </th>
+                        <th class="text-center th-sm"> VersAgirh </th>
+                        <th class="text-center th-sm"> VersProdige </th>
+                        <th class="text-center th-sm"> Ifp </th>
+                        <th class="text-center th-sm"> Mirth </th>
+                        <th class="text-center th-sm"> WebserPH7 </th>
+                        <th class="text-center th-sm"> ConfigAgirh </th>
+                        <th class="text-center th-sm"> ConfigProdige </th>
+                        <th class="text-center th-sm"> Param_Géné_Pro </th>
+                        <th class="text-center th-sm"> Créa_EG_EJ_ED_Agirh </th>
+                        <th class="text-center th-sm"> NomencdesAbsences </th>
+                        <th class="text-center th-sm"> NomencdesEmplois </th>
+                        <th class="text-center th-sm"> NomencdeStatuts </th>
+                        <th class="text-center">ACTIONS</th>
+                    </tr>
+
+                </thead>
+                <tbody>
+
+                    <tr *ngFor="let s of sites">
+
+                        <!-- --Diffuseurs techniques-- -->
+
+                        <td> {{s.id}} </td>
+                        <td> {{s.priorite}} </td>
+                        <td> {{s.nom}} </td>
+                        <td> {{s.siren}} </td>
+                        <td> {{s.statusinstal}} </td>
+                        <td> {{s.hebergement}} </td>
+                        <td> {{s.acces}} </td>
+                        <td> {{s.resprojet}} </td>
+                        <td> {{s.consuldsn}} </td>
+                        <td> {{s.versagirh}} </td>
+                        <td> {{s.versprodige}} </td>
+                        <td> {{s.ifp}} </td>
+                        <td> {{s.mirth}} </td>
+                        <td> {{s.webserph7}} </td>
+                        <td> {{s.configagirh}} </td>
+                        <td> {{s.configprodige}} </td>
+                        <td> {{s.paramgenepro}} </td>
+                        <td> {{s.creationegejed}} </td>
+                        <td> {{s.nomencdesabsences}} </td>
+                        <td> {{s.nomencdesemplois}} </td>
+                        <td> {{s.nomencdestatuts}} </td>
+
+                        <td>
+                            <button class="btn btn-info ml-2" [routerLink]="['/updateSite',site.id]">
+                                <span class="fa fa-edit"></span>
+                            </button>
+
+                            <button class="btn btn-danger ml-2" (click)="SupprimerSite(site.id)">
+                                <span class="fa fa-trash-o"></span>
+                            </button>
+
+                        </td>
+
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+</ng-container>
+

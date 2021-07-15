@@ -1,0 +1,104 @@
+<nav class="navbar navbar-expand-sm bg-darck navbar-dark">
+
+    <!-- <ul class="navbar navbar-nav ml-auto">
+		<li>
+			<form #f="ngForm" (ngSubmit)="rechercherSites()" class="form-inline">
+				<div class="form-group">
+					<input ngModel name="keyword" type="text">
+					<button class="btn btn-sm btn-outline-info ml-2">
+						<span class="fa fa-search"></span>
+					</button>
+				</div>
+			</form>
+		</li>
+
+	</ul> -->
+
+</nav>
+
+
+<ng-container>
+    <div class="card-header -xl ">
+        <div class="table-responsive -xl">
+            <table id="dtHorizontalExample"
+                class="table table-hover table-striped table-bordered table-sm table-wrapper-scroll-y my-custom-scrollbar"
+                cellspacing="0" width="100%">
+                <thead class="center-thead-dark">
+
+                    <tr>
+                        
+                        <!--  --Consultants DSN-- -->
+
+                        <th class="text-center th-sm"> Priorité Rp </th>
+                        <th class="text-center th-sm"> Code GHT </th>
+                        <th class="text-center th-sm"> Code EH </th>
+                        <th class="text-center th-sm"> Libelle EH </th>
+                        <th class="text-center th-sm"> Etab_Fichier GHT </th>
+                        <th class="text-center th-sm"> EJ dans Agirh </th>
+                        <th class="text-center th-sm"> Siret Etab_Principal </th>
+                        <th class="text-center th-sm"> Code GL </th>
+                        <th class="text-center th-sm"> Bulletins </th>
+                        <th class="text-center th-sm"> Reunion de Lancement </th>
+                        <th class="text-center th-sm"> Status Agirh </th>
+                        <th class="text-center th-sm"> Status Prodige </th>
+                        <th class="text-center th-sm"> Eligibilité Version_Dsn </th>
+                        <th class="text-center th-sm"> Nomenclatures </th>
+                        <th class="text-center th-sm"> EG_EG_ED_Agirh </th>
+                        <th class="text-center th-sm"> EG_EG_Prodige </th>
+                        <th class="text-center th-sm"> Param_Géné Prodige </th>
+                        <th class="text-center th-sm"> Compte Util Prodige </th>
+                        <th class="text-center th-sm"> Reprise Siren </th>
+                        <th class="text-center th-sm"> Init_Contrat Ph7 </th>
+                        <th class="text-center th-sm"> Notes </th> 
+
+                        <th class="text-center">ACTIONS</th>
+                    </tr>
+
+                </thead>
+                <tbody>
+
+                        <tr *ngFor="let site of sites">
+
+                        <!--  --Consultants DSN-- -->
+
+                        <td> {{site.prioriterp}}</td>
+                        <td> {{site.codeght}} </td>
+                        <td> {{site.codeeh}} </td>
+                        <td> {{site.libelleeh}} </td>
+                        <td> {{site.etabfichierght}} </td>
+                        <td> {{site.siretetabprincipal}} </td>
+                        <td> {{site.codegl}} </td>
+                        <td> {{site.bulletins}} </td>
+                        <td> {{site.reuniondelancement}} </td>
+                        <td> {{site.statusagirh}} </td>
+                        <td> {{site.statusprodige}} </td>
+                        <td> {{site.eligibiliteversiondsn}} </td>
+                        <td> {{site.nomenclatures}} </td>
+                        <td> {{site.egejedagirh}} </td>
+                        <td> {{site.egejprodige}} </td>
+                        <td> {{site.paramgeneprodige}} </td>
+                        <td> {{site.compteutilprodige}} </td>
+                        <td> {{site.reprisesiren}} </td>
+                        <td> {{site.reprisesiren}} </td>
+                        <td> {{site.initcontratph7}} </td>
+                        <td> {{site.notes}} </td> 
+
+
+                        <td>
+                            <button class="btn btn-info ml-2" [routerLink]="['/updateSite',site.id]">
+                                <span class="fa fa-edit"></span>
+                            </button>
+
+                            <button class="btn btn-danger ml-2" (click)="SupprimerSite(site.id)">
+                                <span class="fa fa-trash-o"></span>
+                            </button>
+
+                        </td>
+
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+</ng-container>

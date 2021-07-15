@@ -1,8 +1,8 @@
 <nav class="navbar navbar-expand-sm bg-darck navbar-dark">
 
-	<ul class="navbar navbar-nav ml-auto">
+    <!-- <ul class="navbar navbar-nav ml-auto">
 		<li>
-			<form #f="ngForm" (ngSubmit)="SearchSites(f.value)" class="form-inline">
+			<form #f="ngForm" (ngSubmit)="rechercherSites()" class="form-inline">
 				<div class="form-group">
 					<input ngModel name="keyword" type="text">
 					<button class="btn btn-sm btn-outline-info ml-2">
@@ -12,7 +12,7 @@
 			</form>
 		</li>
 
-	</ul>
+	</ul> -->
 
 </nav>
 
@@ -26,6 +26,9 @@
                 <thead class="center-thead-dark">
 
                     <tr>
+
+                        <!-- --Diffuseurs techniques-- -->
+
                         <th class="text-center th-sm">Id </th>
                         <th class="text-center th-sm">Priorité </th>
                         <th class="text-center th-sm">Nom </th>
@@ -46,7 +49,35 @@
                         <th class="text-center th-sm">NomencdesEmplois </th>
                         <th class="text-center th-sm">NomencdeStatuts </th>
 
-                 <!--        <th class="text-center th-sm"> Année </th>
+
+                        <!--  --Consultants DSN-- -->
+
+                        <th class="text-center th-sm"> Priorité Rp </th>
+                        <th class="text-center th-sm"> Code GHT </th>
+                        <th class="text-center th-sm"> Code EH </th>
+                        <th class="text-center th-sm"> Libelle EH </th>
+                        <th class="text-center th-sm"> Etab_Fichier GHT </th>
+                        <th class="text-center th-sm"> EJ dans Agirh </th>
+                        <th class="text-center th-sm"> Siret Etab_Principal </th>
+                        <th class="text-center th-sm"> Code GL </th>
+                        <th class="text-center th-sm"> Bulletins </th>
+                        <th class="text-center th-sm"> Reunion de Lancement </th>
+                        <th class="text-center th-sm"> Status Agirh </th>
+                        <th class="text-center th-sm"> Status Prodige </th>
+                        <th class="text-center th-sm"> Eligibilité Version_Dsn </th>
+                        <th class="text-center th-sm"> Nomenclatures </th>
+                        <th class="text-center th-sm"> EG_EG_ED_Agirh </th>
+                        <th class="text-center th-sm"> EG_EG_Prodige </th>
+                        <th class="text-center th-sm"> Param_Géné Prodige </th>
+                        <th class="text-center th-sm"> Compte Util Prodige </th>
+                        <th class="text-center th-sm"> Reprise Siren </th>
+                        <th class="text-center th-sm"> Init_Contrat Ph7 </th>
+                        <th class="text-center th-sm"> Notes </th> 
+
+
+                        <!-- --Responsables projet-- -->
+
+                        <th class="text-center th-sm"> Année </th>
                         <th class="text-center th-sm"> Icc </th>
                         <th class="text-center th-sm"> Corresp_PASRAU </th>
                         <th class="text-center th-sm"> Téléphone_PASRAU </th>
@@ -65,7 +96,7 @@
                         <th class="text-center th-sm"> Date_Réunion_Lanc </th>
                         <th class="text-center th-sm"> Date_kit_Contrôle </th>
                         <th class="text-center th-sm"> Nbre_Anomalies </th>
-                        <th class="text-center th-sm"> Date_Formation </th> --> 
+                        <th class="text-center th-sm"> Date_Formation </th>
 
 
                         <th class="text-center">ACTIONS</th>
@@ -74,7 +105,11 @@
                 </thead>
                 <tbody>
 
-                    <tr *ngFor="let site of sites">
+                    <tr *ngFor="let s of sites">
+
+                        <!-- --Diffuseurs techniques-- -->
+
+                        <tr *ngFor="let site of sites">
 
                         <td>{{site.id}} </td>
                         <td>{{site.priorite}} </td>
@@ -95,38 +130,66 @@
                         <td>{{site.nomencdesabsences}} </td>
                         <td>{{site.nomencdesemplois}} </td>
                         <td>{{site.nomencdestatuts}} </td>
-<!-- 
-                        <td> {{s.annee}} </td>
-                        <td> {{s.icc}} </td>
-                        <td> {{s.corresppasrau}} </td>
-                        <td> {{s.telpasreau}} </td>
-                        <td> {{s.emailpasreau}} </td>
-                        <td> {{s.siretpasreau}} </td>
-                        <td> {{s.ofisigne}} </td>
-                        <td> {{s.sitesupport}} </td>
-                        <td> {{s.exploitpaie}} </td>
-                        <td> {{s.heberagirh}} </td>
-                        <td> {{s.heberprodige}} </td>
-                        <td> {{s.instalprodige}} </td>
-                        <td> {{s.baseaintal}} </td>
-                        <td> {{s.modulerh}} </td>
-                        <td> {{s.instalech}} </td>
-                        <td> {{s.multiducs}} </td>
-                        <td> {{s.datereunionlanc}} </td>
-                        <td> {{s.datekitdecontrole}} </td>
-                        <td> {{s.nbreanomalies}} </td>
-                        <td> {{s.dateformation}} </td> -->
-                        
-                        <td>
 
+
+                        <!--  --Consultants DSN-- -->
+
+                        <td> {{site.prioriterp}}</td>
+                        <td> {{site.codeght}} </td>
+                        <td> {{site.codeeh}} </td>
+                        <td> {{site.libelleeh}} </td>
+                        <td> {{site.etabfichierght}} </td>
+                        <td> {{site.siretetabprincipal}} </td>
+                        <td> {{site.codegl}} </td>
+                        <td> {{site.bulletins}} </td>
+                        <td> {{site.reuniondelancement}} </td>
+                        <td> {{site.statusagirh}} </td>
+                        <td> {{site.statusprodige}} </td>
+                        <td> {{site.eligibiliteversiondsn}} </td>
+                        <td> {{site.nomenclatures}} </td>
+                        <td> {{site.egejedagirh}} </td>
+                        <td> {{site.egejprodige}} </td>
+                        <td> {{site.paramgeneprodige}} </td>
+                        <td> {{site.compteutilprodige}} </td>
+                        <td> {{site.reprisesiren}} </td>
+                        <td> {{site.reprisesiren}} </td>
+                        <td> {{site.initcontratph7}} </td>
+                        <td> {{site.notes}} </td> 
+
+
+                        <!-- --Responsables projet-- -->
+
+                        <td> {{site.annee}} </td>
+                        <td> {{site.icc}} </td>
+                        <td> {{site.corresppasrau}} </td>
+                        <td> {{site.telpasreau}} </td>
+                        <td> {{site.emailpasreau}} </td>
+                        <td> {{site.siretpasreau}} </td>
+                        <td> {{site.contactsitemet}}</td>
+                        <td> {{site.contactsiteinfo}} </td>
+                        <td> {{site.ofisigne}} </td>
+                        <td> {{site.sitesupport}} </td>
+                        <td> {{site.exploitpaie}} </td>
+                        <td> {{site.heberagirh}} </td>
+                        <td> {{site.heberprodige}} </td>
+                        <td> {{site.instalprodige}} </td>
+                        <td> {{site.baseaintal}} </td>
+                        <td> {{site.modulerh}} </td>
+                        <td> {{site.instalech}} </td>
+                        <td> {{site.multiducs}} </td>
+                        <td> {{site.datereunionlanc}} </td>
+                        <td> {{site.datekitdecontrole}} </td>
+                        <td> {{site.nbreanomalies}} </td>
+                        <td> {{site.dateformation}} </td>
+
+                        <td>
                             <button class="btn btn-info ml-2" [routerLink]="['/updateSite',site.id]">
                                 <span class="fa fa-edit"></span>
                             </button>
 
                             <button class="btn btn-danger ml-2" (click)="SupprimerSite(site.id)">
-                                <span class="fa fa-trash-o"></span> 
-                            </button>   
-
+                                <span class="fa fa-trash-o"></span>
+                            </button>
 
                         </td>
 
@@ -137,90 +200,3 @@
         </div>
     </div>
 </ng-container>
-
-<!-- <div class="card-header -xl">
-            <div class="table-responsive -xl">
-                <table class="table table-striped">
-                    <thead class="thead-dark">
-
-                        <tr>
-                            <th>Id </th>
-                            <th>Priorité </th>
-                            <th>Nom </th>
-                            <th>Siren </th>
-                            <th>StatusInstal </th>
-                            <th>Hebergement </th>
-                            <th>Acces </th>
-                            <th>ResProjet </th>
-                            <th>ConsulDsn </th>
-                            <th>VersAgirh </th>
-                            <th>VersProdige </th>
-                            <th>Ifp </th>
-                            <th>Mirth </th>
-                            <th>WebserPH7 </th>
-                            <th>ConfigAgirh </th>
-                            <th>ConfigProdige </th>
-                            <th>NomencdesAbsences</th>
-                            <th>NomencdesEmplois </th>
-                            <th>NomencdeStatuts </th>
-                            <th>ACTIONS </th>
-                            <th>ACTIONS </th>
-                        </tr>
-                    </thead>
-
-                    <tbody *ngFor="let site of sites">
-
-                        <tr>
-                            <td>{{site.priorite}} </td>
-                            <td>{{site.nom}} </td>
-                            <td>{{site.siren}} </td>
-                            <td>{{site.Statusinstal}} </td>
-                            <td>{{site.hebergement}} </td>
-                            <td>{{site.acces}} </td>
-                            <td>{{site.resrojet}} </td>
-                            <td>{{site.Consuldsn}} </td>
-                            <td>{{site.versagirh}} </td>
-                            <td>{{site.versprodige}} </td>
-                            <td>{{site.ifp}} </td>
-                            <td>{{site.mirth}} </td>
-                            <td>{{site.webserph7}} </td>
-                            <td>{{site.configagirh}} </td>
-                            <td>{{site.configprodige}} </td>
-                            <td>{{site.nomencdesabsences}} </td>
-                            <td>{{site.nomencdesemplois}} </td>
-                            <td>{{site.nomencdestatuts}} </td>
-                            <td> </td>
-
-                            <td><a class="btn btn-success" [routerLink]="['/updateSite',site.id]">Modifier</a></td>
-
-                            <td><a class="btn btn-danger" (click)="supprimerSite(site)">Supprimer</a></td>
-
-                        </tr>
-                    </tbody>
-                </table>
-    
-    </div>
-
-<div *ngFor="let site of sites">
-    <div>{{site.idSite}} </div>
-    <div>{{site.Priorite}} </div>
-    <div>{{site.Nom}} </div>
-    <div>{{site.Siren}} </div>
-    <div>{{site.StatutInstal}} </div>
-    <div>{{site.Hebergement}} </div>
-    <div>{{site.Acces}} </div>
-    <div>{{site.ResProjet}} </div>
-    <div>{{site.ConsulDsn}} </div>
-    <div>{{site.VersAgirh}} </div>
-    <div>{{site.VersProdige}} </div>
-    <div>{{site.Ifp}} </div>
-    <div>{{site.Mirth}} </div>
-    <div>{{site.WebserPH7}} </div>
-    <div>{{site.ConfigAgirh}} </div>
-    <div>{{site.ConfigProdige}} </div>
-    <div>{{site.NomencdesAbsences}} </div>
-    <div>{{site.NomencdesEmplois}} </div>
-    <div>{{site.NomencdeStatuts}} </div>
-    <div>{{site.ACTIONS}} </div> 
-
-</div> -->

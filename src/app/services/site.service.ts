@@ -33,7 +33,7 @@ export class SiteService {
    return this.http.get<Site[]>(`${this.apiServerUrl}/sites`);
   }
 
-  listerSite(id: number): Observable<Site[]>{
+   listerSite(id: number): Observable<Site[]>{
    
     return this.http.get<Site[]>(`${this.apiServerUrl}/site/${id}`);
    }
@@ -44,7 +44,7 @@ export class SiteService {
   }
 
 
-  nouveauSite(site: Site):Observable<Site>{ 
+   nouveauSite(site: Site):Observable<Site>{ 
     return this.http.post<Site>(`${this.apiServerUrl}/addSite`,site);
   }
 
@@ -59,21 +59,16 @@ export class SiteService {
   }
 
 
-  consulterSite(id: number): Observable<Site>{ 
+   consulterSite(id: number): Observable<Site>{ 
     const url = `${this.apiServerUrl}/site/${id}`; 
     return this.http.get<Site>(url); 
     
   }
+
+   rechercherSites(keyword:string):Observable<Site[]>{
+  return this.http.get<Site[]>(`${this.apiServerUrl}/sites?nom_like="+keyword`);
+}
   
-
-
-
-
-
-/*   deleteSite(site:Site):Observable<void>{
-   
-    return this.http.delete<void>(`${this.apiServerUrl}/delete/${site.id}`);
-  } */
 
 
 
@@ -82,13 +77,6 @@ export class SiteService {
 
 
  
- 
-
-
-/* return this.http.delete(`${this.apiServerUrl}`+"/delete/"+id); */
-
-
-
 
 
 
