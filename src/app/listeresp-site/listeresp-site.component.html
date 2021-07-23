@@ -1,56 +1,52 @@
-<nav class="navbar navbar-expand-sm bg-darck navbar-dark">
+<nav class="navbar navbar-dark sm-dark"> 
+    <div class="container-fluid">
+      <a class="navbar-brand"></a>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="rechercher ici" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Recherche</button>
+      </form>
+    </div>
+ </nav>
 
-    <!-- <ul class="navbar navbar-nav ml-auto">
-		<li>
-			<form #f="ngForm" (ngSubmit)="rechercherSites()" class="form-inline">
-				<div class="form-group">
-					<input ngModel name="keyword" type="text">
-					<button class="btn btn-sm btn-outline-info ml-2">
-						<span class="fa fa-search"></span>
-					</button>
-				</div>
-			</form>
-		</li>
 
-	</ul> -->
-
-</nav>
 <ng-container>
-    <div class="card-header -xl ">
-        <div class="table-responsive -xl">
+    <div class="card-header -xxl ">
+        <div class="table-responsive -xxl">
             <table id="dtHorizontalExample"
                 class="table table-hover table-striped table-bordered table-sm table-wrapper-scroll-y my-custom-scrollbar"
-                cellspacing="0" width="100%">
-                <thead class="center-thead-dark">
+                cellspacing="50" width="100%">
+                <thead class="thead-dark">
 
                     <tr>
 
 
                         <!-- --Responsables projet-- -->
 
-                        <th class="text-center th-sm"> Année </th>
-                        <th class="text-center th-sm"> Icc </th>
-                        <th class="text-center th-sm"> Corresp_PASRAU </th>
-                        <th class="text-center th-sm"> Téléphone_PASRAU </th>
-                        <th class="text-center th-sm"> Email PASRAU </th>
-                        <th class="text-center th-sm"> Siret PASRAU </th>
-                        <th class="text-center th-sm"> Contact site_Métier</th>
-                        <th class="text-center th-sm"> Contact site_infor</th>
-                        <th class="text-center th-sm"> Ofi signé </th>
-                        <th class="text-center th-sm"> Site Support </th>
-                        <th class="text-center th-sm"> Exploit Paie </th>
-                        <th class="text-center th-sm"> Heber_Agirh </th>
-                        <th class="text-center th-sm"> Heber_Prodige </th>
-                        <th class="text-center th-sm"> Prodige installé </th>
-                        <th class="text-center th-sm"> Base à Installer </th>
-                        <th class="text-center th-sm"> Module Rh </th>
-                        <th class="text-center th-sm"> Instal_Echange </th>
-                        <th class="text-center th-sm"> Multiducs </th>
-                        <th class="text-center th-sm"> Date_Réunion_Lanc </th>
-                        <th class="text-center th-sm"> Date_kit_Contrôle </th>
-                        <th class="text-center th-sm"> Nbre_Anomalies </th>
-                        <th class="text-center th-sm"> Date_Formation </th>
-                        <th class="text-center">ACTIONS </th>
+                        <th class="p-2 bg-danger text-center th-lg"> Id </th>
+                        <th class="text-center th-sm"> Nom </th>
+                        <th class="text-center th-lg"> Année </th>
+                        <th class="text-center th-lg"> Icc </th>
+                        <th class="text-center th-lg"> Corresp PASRAU </th>
+                        <th class="text-center th-lg"> Téléphone PASRAU </th>
+                        <th class="text-center th-lg"> Email PASRAU </th>
+                        <th class="text-center th-lg"> Siret_PASRAU </th>
+                        <th class="text-center th-lg"> Contact_site_Métier</th>
+                        <th class="text-center th-lg"> Contact_site_infor</th>
+                        <th class="text-center th-lg"> Ofi_signé </th>
+                        <th class="text-center th-lg"> Site_Support </th>
+                        <th class="text-center th-lg"> Exploit_Paie </th>
+                        <th class="text-center th-lg"> Heber_Agirh </th>
+                        <th class="text-center th-lg"> Heber_Prodige </th>
+                        <th class="text-center th-lg"> Prodige_installé </th>
+                        <th class="text-center th-lg"> Base_à_Installer </th>
+                        <th class="text-center th-lg"> Module_Rh </th>
+                        <th class="text-center th-lg"> Instal_Echange </th>
+                        <th class="text-center th-lg"> Multiducs </th>
+                        <th class="text-center th-lg"> Date_Réunion_Lanc </th>
+                        <th class="text-center th-lg"> Date_kit_Contrôle </th>
+                        <th class="text-center th-lg"> Nbre_Anomalies </th>
+                        <th class="text-center th-lg"> Date_Formation </th>
+                        <th class="p-2 bg-danger text-center th-xxl"> ACTIONS </th>
                     </tr>
 
                 </thead>
@@ -60,38 +56,40 @@
 
 
                         <!-- --Responsables projet-- -->
-
-                        <td> {{site .annee}} </td>
-                        <td> {{site .icc}} </td>
-                        <td> {{site .corresppasrau}} </td>
-                        <td> {{site .telpasreau}} </td>
-                        <td> {{site .emailpasreau}} </td>
-                        <td> {{site .siretpasreau}} </td>
-                        <td> {{site .contactsitemet}}</td>
-                        <td> {{site .contactsiteinfo}} </td>
-                        <td> {{site .ofisigne}} </td>
-                        <td> {{site .sitesupport}} </td>
-                        <td> {{site .exploitpaie}} </td>
-                        <td> {{site .heberagirh}} </td>
-                        <td> {{site .heberprodige}} </td>
-                        <td> {{site .instalprodige}} </td>
-                        <td> {{site .baseaintal}} </td>
-                        <td> {{site .modulerh}} </td>
-                        <td> {{site .instalech}} </td>
-                        <td> {{site .multiducs}} </td>
-                        <td> {{site .datereunionlanc}} </td>
-                        <td> {{site .datekitdecontrole}} </td>
-                        <td> {{site .nbreanomalies}} </td>
-                        <td> {{site .dateformation}} </td>
+                        
+                        <td> {{site.id}} </td>
+                        <td> {{site.nom}} </td>
+                        <td> {{site.annee | date:'dd/MM/yyyy'}} </td>
+                        <td> {{site.icc}} </td>
+                        <td> {{site.corresppasrau}} </td>
+                        <td> {{site.telpasreau}} </td>
+                        <td> {{site.emailpasreau}} </td>
+                        <td> {{site.siretpasreau}} </td>
+                        <td> {{site.contactsitemet}}</td>
+                        <td> {{site.contactsiteinfo}} </td>
+                        <td> {{site.ofisigne}} </td>
+                        <td> {{site.sitesupport}} </td>
+                        <td> {{site.exploitpaie}} </td>
+                        <td> {{site.heberagirh}} </td>
+                        <td> {{site.heberprodige}} </td>
+                        <td> {{site.instalprodige}} </td>
+                        <td> {{site.baseainstal}} </td>
+                        <td> {{site.modulerh}} </td>
+                        <td> {{site.instalech}} </td>
+                        <td> {{site.multiducs}} </td>
+                        <td> {{site.datereunionlanc | date:'dd/MM/yyyy'}} </td>
+                        <td> {{site.datekitdecontrole | date:'dd/MM/yyyy'}} </td>
+                        <td> {{site.nbreanomalies}} </td>
+                        <td> {{site.dateformation | date:'dd/MM/yyyy'}}
 
                         <td>
-                            <button class="btn btn-info ml-2" [routerLink]="['/updateSite',site.id]">
+                            <button class="btn btn-warning sm-2" [routerLink]="['/updaterespSite',site.id]">
                                 <span class="fa fa-edit"></span>
                             </button>
 
-                            <button class="btn btn-danger ml-2" (click)="SupprimerSite(site.id)">
+                            <!-- <button class="btn btn-primary sm-2" (click)="SupprimerSite(site.id)">
                                 <span class="fa fa-trash-o"></span>
-                            </button>
+                            </button>  -->
                         </td>
 
                     </tr>

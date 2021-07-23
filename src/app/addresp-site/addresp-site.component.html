@@ -1,0 +1,151 @@
+<div>
+  <h2>Entrer un nouvel enregistrement</h2>
+</div>
+
+<div class="container">
+  <div class="card-header -xl">
+
+    <form>
+
+      <div class="form-group row">
+        <label for="inputState" class="col-sm- col-form-label">Nom</label>
+        <input type="text" [(ngModel)]="newSite.nom" name="nom" class="form-control">
+      </div>
+
+      <div class="form-group row">
+        <label class="col-sm- col-form-label">Année</label>
+        <select id="inputState" [(ngModel)]="newSite.annee" name="annee" class="form-control">
+          <option selected></option>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+      </div>
+
+      <div class="form-group row">
+        <label for="inputState" class="col-sm- col-form-label">Icc</label>
+        <input id="inputState" type="text" [(ngModel)]="newSite.icc" name="icc" class="form-control">
+      </div>
+
+      <div class="form-group row">
+        <label for="inputState" class="col-sm- col-form-label">Correspondant PASRAU</label>
+        <input id="inputState" type="text" [(ngModel)]="newSite.corresppasrau" name="corresppasrau" class="form-control">
+      </div>
+
+      <div class="form-group row">
+        <label for="inputState" class="col-sm- col-form-label">Téléphone PASRAU </label>
+        <input id="inputState" type="text" [(ngModel)]="newSite.telpasreau" name="telpasreau" class="form-control">
+      </div>
+
+      <div class="form-group row">
+        <label for="inputState" class="col-sm- col-form-label">Email PASRAU </label>
+        <input id="inputState" type="text" [(ngModel)]="newSite.emailpasreau" name="emailpasreau" class="form-control">
+      </div>
+
+      <div class="form-group row">
+        <label for="inputState" class="col-sm- col-form-label">Siret PASRAU </label>
+        <input id="inputState" type="text" [(ngModel)]="newSite.siretpasreau" name="siretpasreau" class="form-control">
+      </div>
+
+      <div class="form-group row">
+        <label for="inputState" class="col-sm- col-form-label">Contact Site Métier </label>
+        <input id="inputState" type="text" [(ngModel)]="newSite.contactsitemet" name="contactsitemet" class="form-control">
+      </div>
+
+      <div class="form-group row">
+        <label for="inputState" class="col-sm- col-form-label">Contact Site Informatique </label>
+        <input id="inputState" type="text" [(ngModel)]="newSite.contactsiteinfo" name="contactsiteinfo" class="form-control">
+      </div>
+
+      <div class="form-group row">
+        <label for="inputState" class="col-sm- col-form-label">OFI Signé </label>
+        <input id="inputState" type="text" [(ngModel)]="newSite.ofisigne" name="ofisigne" class="form-control">
+      </div>
+
+      <div class="form-group row">
+        <label for="inputState" class="col-sm- col-form-label">Site Support </label>
+        <input id="inputState" type="text" [(ngModel)]="newSite.sitesupport" name="sitesupport" class="form-control">
+      </div>
+
+      <div class="form-group row">
+        <label for="inputState" class="col-sm- col-form-label">Exploit paie </label>
+        <input id="inputState" type="text" [(ngModel)]="newSite.exploitpaie" name="exploitpaie" class="form-control">
+      </div>
+
+      <div class="form-group row">
+        <label for="inputState" class="col-sm- col-form-label">Hebergement_Agirh</label>
+        <select id="inputState" [(ngModel)]="newSite.hebergement" name="hebergement" class="form-control">
+          <option selected></option>
+          <option>Autonome</option>
+          <option>Hébergé</option>
+        </select>
+      </div>
+
+      <div class="form-group row">
+        <label for="inputState" class="col-sm- col-form-label">Hebergement_Prodige</label>
+        <select id="inputState" [(ngModel)]="newSite.hebergement" name="hebergement" class="form-control">
+          <option selected></option>
+          <option>Autonome</option>
+          <option>Hébergé</option>
+        </select>
+      </div>
+
+      <div class="form-group row">
+        <label for="inputState" class="col-sm- col-form-label">Prodige installé </label>
+        <input id="inputState" type="text" [(ngModel)]="newSite.instalprodige" name="instalprodige" class="form-control">
+      </div>
+
+      <div class="form-group row">
+        <label for="inputState" class="col-sm- col-form-label">Base à installer </label>
+        <input id="inputState" type="text" [(ngModel)]="newSite.baseainstal" name="baseainstal" class="form-control">
+      </div>
+
+      <div class="form-group row">
+        <label for="inputState" class="col-sm- col-form-label">Module Rh </label>
+        <input id="inputState" type="text" [(ngModel)]="newSite.modulerh" name="modulerh" class="form-control">
+      </div>
+
+      <div class="form-group row">
+        <label for="inputState" class="col-sm- col-form-label">Installation_Echange </label>
+        <input id="inputState" type="text" [(ngModel)]="newSite.instalech" name="instalech" class="form-control">
+      </div>
+
+      <div class="form-group row">
+        <label for="inputState" class="col-sm- col-form-label">Multiducs</label>
+        <input id="inputState" type="text" [(ngModel)]="newSite.multiducs" name="multiducs" class="form-control">
+      </div>
+
+      <div class="form-group row">
+        <label for="inputState" class="col-sm- col-form-label">Date réunion de lancement </label>
+        <input id="inputState" type="date" [(ngModel)]="newSite.datereunionlanc" name="datereunionlanc" class="form-control">
+      </div>
+
+      <div class="form-group row">
+        <label for="inputState" class="col-sm- col-form-label">Date kit de contrôle </label>
+        <input id="inputState" type="date" [(ngModel)]="newSite.datekitdecontrole" name="datekitdecontrole" class="form-control">
+      </div>
+
+      <div class="form-group row">
+        <label for="inputState" class="col-sm- col-form-label">Nombre d'anomalies</label>
+        <input id="inputState" type="text" [(ngModel)]="newSite.nbreanomalies" name="nbreanomalies" class="form-control">
+      </div>
+    
+      <div class="form-group row">
+        <label for="inputState" class="col-sm- col-form-label">Date de formation </label>
+        <input id="inputState" type="date" [(ngModel)]="newSite.dateformation" name="dateformation" class="form-control">
+      </div>
+    
+
+      <div class="modal-footer">
+        <button type="submit" (click)="addrespSite()" class="btn btn-success">Enregistrer</button>
+      </div>
+
+      <div>
+        <h3>{{ message }}</h3>
+      </div>
+
+    </form>
+  </div>
+</div>

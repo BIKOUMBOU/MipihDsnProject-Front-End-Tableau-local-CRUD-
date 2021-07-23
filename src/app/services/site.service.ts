@@ -1,17 +1,18 @@
+import { User } from './../model/user.model';
 import { Injectable } from '@angular/core';
 import { Site } from '../model/site.model';
 import {environment} from '../../environments/environment';
 import {Observable} from 'rxjs';
 import {HttpClient, HttpHeaders, HttpClientModule} from '@angular/common/http';
+
 /* 
-const httpOptions = { 
+ const httpOptions = { 
   headers: new HttpHeaders({'Content-Type': 'application/json',})
 };
-const baseUrl = `${environment.apiUrl}/sites`; */
+ const baseUrl = `${environment.apiUrl}/sites`; */
 
 
-
-@Injectable({
+ @Injectable({
   providedIn: 'root'
 })
 
@@ -29,12 +30,10 @@ export class SiteService {
 
 
    listerSites(): Observable<Site[]>{
-   
-   return this.http.get<Site[]>(`${this.apiServerUrl}/sites`);
-  }
+    return this.http.get<Site[]>(`${this.apiServerUrl}/sites`);
+   }
 
    listerSite(id: number): Observable<Site[]>{
-   
     return this.http.get<Site[]>(`${this.apiServerUrl}/site/${id}`);
    }
 
@@ -53,6 +52,18 @@ export class SiteService {
     return this.http.put<Site>(`${this.apiServerUrl}/updateSite`,site);
   }
 
+   updatedifSite(site:Site):Observable<Site>{
+    return this.http.put<Site>(`${this.apiServerUrl}/updatedifSite`,site);
+  }
+
+   updateconSite(site:Site):Observable<Site>{
+    return this.http.put<Site>(`${this.apiServerUrl}/updateconSite`,site);
+  }
+
+   updaterespSite(site:Site):Observable<Site>{
+    return this.http.put<Site>(`${this.apiServerUrl}/updaterespSite`,site);
+  }
+
    supprimerSite(id: number){
     /* return this.http.delete(`${this.apiServerUrl}/delete/${id}`,{responseType: 'text'}); */
     return this.http.delete<void>(`${this.apiServerUrl}/delete/${id}`);
@@ -61,13 +72,35 @@ export class SiteService {
 
    consulterSite(id: number): Observable<Site>{ 
     const url = `${this.apiServerUrl}/site/${id}`; 
-    return this.http.get<Site>(url); 
-    
+    return this.http.get<Site>(url);   
   }
 
+   consulterdifSite(id: number): Observable<Site>{ 
+    const url = `${this.apiServerUrl}/site/${id}`; 
+    return this.http.get<Site>(url);     
+  }
+
+   consulterconSite(id: number): Observable<Site>{ 
+    const url = `${this.apiServerUrl}/site/${id}`; 
+    return this.http.get<Site>(url);     
+  }
+
+   consulterespSite(id: number): Observable<Site>{ 
+    const url = `${this.apiServerUrl}/site/${id}`; 
+    return this.http.get<Site>(url);     
+  }
+
+  getUserFromDB(username:string):Observable<User> { 
+  
+    const url = `${this.apiServerUrl}/${username}`; 
+    return this.http.get<User>(url); 
+  }
+
+
+
    rechercherSites(keyword:string):Observable<Site[]>{
-  return this.http.get<Site[]>(`${this.apiServerUrl}/sites?nom_like="+keyword`);
-}
+    return this.http.get<Site[]>(`${this.apiServerUrl}/sites?nom_like="+keyword`);
+  }
   
 
 

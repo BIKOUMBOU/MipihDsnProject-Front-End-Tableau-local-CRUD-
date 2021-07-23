@@ -28,7 +28,8 @@ export class Site {
      --Consultants DSN-- */
 
     prioriterp: number;
-    codeght: number;
+    idght: number;
+    /* codeght: String; */
     codeeh: number;
     libelleeh: String;
     etabfichierght: String;
@@ -46,7 +47,8 @@ export class Site {
     paramgeneprodige: String;
     compteutilprodige: String;
     reprisesiren: String;
-    initcontratph7: String; 
+    initcontratph7: String;
+    notes: String; 
 
 
  /*    --Responsables projet-- */
@@ -57,6 +59,8 @@ export class Site {
     telpasreau: number;
     emailpasreau: String;
     siretpasreau: number;
+    contactsitemet: number; 
+    contactsiteinfo: number;
     ofisigne: String;
     sitesupport: String;
     exploitpaie: String;

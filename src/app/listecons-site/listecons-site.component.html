@@ -1,57 +1,53 @@
-<nav class="navbar navbar-expand-sm bg-darck navbar-dark">
-
-    <!-- <ul class="navbar navbar-nav ml-auto">
-		<li>
-			<form #f="ngForm" (ngSubmit)="rechercherSites()" class="form-inline">
-				<div class="form-group">
-					<input ngModel name="keyword" type="text">
-					<button class="btn btn-sm btn-outline-info ml-2">
-						<span class="fa fa-search"></span>
-					</button>
-				</div>
-			</form>
-		</li>
-
-	</ul> -->
-
-</nav>
+<nav class="navbar navbar-dark sm-dark"> 
+    <div class="container-fluid">
+      <a class="navbar-brand"></a>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="rechercher ici" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Recherche</button>
+      </form>
+    </div>
+ </nav>
 
 
 <ng-container>
-    <div class="card-header -xl ">
-        <div class="table-responsive -xl">
+    <div class="card-header -xxl ">
+        <div class="table-responsive -xxl">
             <table id="dtHorizontalExample"
                 class="table table-hover table-striped table-bordered table-sm table-wrapper-scroll-y my-custom-scrollbar"
                 cellspacing="0" width="100%">
-                <thead class="center-thead-dark">
+                <thead class="thead-dark">
 
                     <tr>
                         
                         <!--  --Consultants DSN-- -->
 
-                        <th class="text-center th-sm"> Priorité Rp </th>
-                        <th class="text-center th-sm"> Code GHT </th>
-                        <th class="text-center th-sm"> Code EH </th>
-                        <th class="text-center th-sm"> Libelle EH </th>
-                        <th class="text-center th-sm"> Etab_Fichier GHT </th>
-                        <th class="text-center th-sm"> EJ dans Agirh </th>
-                        <th class="text-center th-sm"> Siret Etab_Principal </th>
-                        <th class="text-center th-sm"> Code GL </th>
-                        <th class="text-center th-sm"> Bulletins </th>
-                        <th class="text-center th-sm"> Reunion de Lancement </th>
-                        <th class="text-center th-sm"> Status Agirh </th>
-                        <th class="text-center th-sm"> Status Prodige </th>
-                        <th class="text-center th-sm"> Eligibilité Version_Dsn </th>
-                        <th class="text-center th-sm"> Nomenclatures </th>
-                        <th class="text-center th-sm"> EG_EG_ED_Agirh </th>
-                        <th class="text-center th-sm"> EG_EG_Prodige </th>
-                        <th class="text-center th-sm"> Param_Géné Prodige </th>
-                        <th class="text-center th-sm"> Compte Util Prodige </th>
-                        <th class="text-center th-sm"> Reprise Siren </th>
-                        <th class="text-center th-sm"> Init_Contrat Ph7 </th>
-                        <th class="text-center th-sm"> Notes </th> 
+                        <th class="p-2 bg-danger text-center th-lg"> Id </th>
+                        <th class="text-center th-sm"> Nom </th>
+                        <th class="text-center th-lg"> Accès </th>
+                        <th class="text-center th-lg"> Priorité_Rp </th>
+                        <th class="text-center th-lg"> Id_GHT </th>
+                        <th class="text-center th-lg"> Code_GHT </th>
+                        <th class="text-center th-lg"> Code_EH </th>
+                        <th class="text-center th-lg"> Libelle_EH </th>
+                        <th class="text-center th-lg"> Etab_Fichier_GHT </th>
+                        <th class="text-center th-lg"> EJ_dans_Agirh </th>
+                        <th class="text-center th-lg"> Siret_Etab_Principal </th>
+                        <th class="text-center th-lg"> Code GL </th>
+                        <th class="text-center th-lg"> Bulletins </th>
+                        <th class="text-center th-lg"> Reunion_de_Lancement </th>
+                        <th class="text-center th-lg"> Status_Agirh </th>
+                        <th class="text-center th-lg"> Status_Prodige </th>
+                        <th class="text-center th-lg"> Eligibilité_Version_Dsn </th>
+                        <th class="text-center th-lg"> Nomenclatures </th>
+                        <th class="text-center th-lg"> EG_EJ_ED_Agirh </th>
+                        <th class="text-center th-lg"> EG_EJ_Prodige </th>
+                        <th class="text-center th-lg"> Param_Géné_Prodige </th>
+                        <th class="text-center th-lg"> Compte_Util_Prodige </th>
+                        <th class="text-center th-lg"> Reprise_Siren </th>
+                        <th class="text-center th-lg"> Init_Contrat_Ph7 </th>
+                        <!--    <th class="text-center th-lg"> Notes </th>  -->
 
-                        <th class="text-center">ACTIONS</th>
+                        <th class="p-2 bg-danger text-center th-lg">ACTIONS</th>
                     </tr>
 
                 </thead>
@@ -61,11 +57,16 @@
 
                         <!--  --Consultants DSN-- -->
 
+                        <td> {{site.id}} </td>
+                        <td> {{site.nom}} </td>
+                        <td> {{site.acces}} </td>
                         <td> {{site.prioriterp}}</td>
+                        <td> {{site.idght}} </td>
                         <td> {{site.codeght}} </td>
                         <td> {{site.codeeh}} </td>
                         <td> {{site.libelleeh}} </td>
                         <td> {{site.etabfichierght}} </td>
+                        <td> {{site.ejdansagirh}} </td>
                         <td> {{site.siretetabprincipal}} </td>
                         <td> {{site.codegl}} </td>
                         <td> {{site.bulletins}} </td>
@@ -79,19 +80,17 @@
                         <td> {{site.paramgeneprodige}} </td>
                         <td> {{site.compteutilprodige}} </td>
                         <td> {{site.reprisesiren}} </td>
-                        <td> {{site.reprisesiren}} </td>
                         <td> {{site.initcontratph7}} </td>
-                        <td> {{site.notes}} </td> 
-
+                     <!--    <td> {{site.notes}} </td>  -->
 
                         <td>
-                            <button class="btn btn-info ml-2" [routerLink]="['/updateSite',site.id]">
+                            <button class="btn btn-warning ml-2" [routerLink]="['/updateconSite',site.id]">
                                 <span class="fa fa-edit"></span>
                             </button>
 
-                            <button class="btn btn-danger ml-2" (click)="SupprimerSite(site.id)">
+                        <!--     <button class="btn btn-primary ml-3" (click)="SupprimerSite(site.id)">
                                 <span class="fa fa-trash-o"></span>
-                            </button>
+                            </button> -->
 
                         </td>
 

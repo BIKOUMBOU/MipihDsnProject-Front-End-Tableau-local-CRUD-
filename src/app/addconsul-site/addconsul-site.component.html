@@ -1,0 +1,161 @@
+<div>
+    <h2>Entrer un nouvel enregistrement</h2>
+</div>
+  
+  <div class="container">
+    <div class="card-header -xl">
+  
+      <form>
+  
+        <div class="form-group row">
+          <label for="inputState" class="col-sm- col-form-label">Nom</label>
+          <input type="text" [(ngModel)]="newSite.nom" name="nom" class="form-control">
+        </div>
+  
+        <div class="form-group row">
+          <label class="col-sm- col-form-label">Priorite_RP</label>
+          <select id="inputState" [(ngModel)]="newSite.prioriterp" name="prioriterp" class="form-control">
+            <option selected></option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        </div>
+  
+        <div class="form-group row">
+          <label for="inputState" class="col-sm- col-form-label">Code GHT</label>
+          <input id="inputState" type="text" [(ngModel)]="newSite.idght" name="newSite.idght" class="form-control">
+        </div>
+
+        
+        <div class="form-group row">
+          <label for="inputState" class="col-sm- col-form-label">Code GHT</label>
+          <select id="inputState" type="text" [(ngModel)]="newSite.codeght" name="codeght" class="form-control">
+            <option selected></option>
+            <option></option>
+            <option></option>
+            <option></option>
+            <option></option>
+            <option></option>
+          </select>
+        </div>
+        
+
+        <div class="form-group row">
+          <label for="inputState" class="col-sm- col-form-label">Code EH</label>
+          <input id="inputState" type="text" [(ngModel)]="newSite.codeeh" name="codeeh" class="form-control">
+        </div>
+
+        <div class="form-group row">
+          <label for="inputState" class="col-sm- col-form-label">Libelle EH </label>
+          <input id="inputState" type="text" [(ngModel)]="newSite.libelleeh" name="libelleeh" class="form-control">
+        </div>
+
+        <div class="form-group row">
+          <label for="inputState" class="col-sm- col-form-label">Etab_Fichier GHT </label>
+          <input id="inputState" type="text" [(ngModel)]="newSite.etabfichierght" name="etabfichierght" class="form-control">
+        </div>
+
+        <div class="form-group row">
+          <label for="inputState" class="col-sm- col-form-label">EJ dans Agirh </label>
+          <input id="inputState" type="text" [(ngModel)]="newSite.ejdansagirh" name="ejdansagirh" class="form-control">
+        </div>
+
+        <div class="form-group row">
+          <label for="inputState" class="col-sm- col-form-label">Siret Etab_Principal </label>
+          <input id="inputState" type="text" [(ngModel)]="newSite.siretetabprincipal" name="siretetabprincipal" class="form-control">
+        </div>
+
+        <div class="form-group row">
+          <label for="inputState" class="col-sm- col-form-label">Code GL </label>
+          <input id="inputState" type="text" [(ngModel)]="newSite.codegl" name="codegl" class="form-control">
+        </div>
+
+        <div class="form-group row">
+          <label for="inputState" class="col-sm- col-form-label">Bulletins </label>
+          <input id="inputState" type="text" [(ngModel)]="newSite.bulletins" name="bulletins" class="form-control">
+        </div>
+
+        <div class="form-group row">
+          <label for="inputState" class="col-sm- col-form-label">Réunion de lancement </label>
+          <input id="inputState" type="text" [(ngModel)]="newSite.reuniondelancement" name="reuniondelancement" class="form-control">
+        </div>
+
+        <div class="form-group row">
+          <label for="inputState" class="col-sm- col-form-label">Status Agirh </label>
+          <input id="inputState" type="text" [(ngModel)]="newSite.statusagirh" name="statusagirh" class="form-control">
+        </div>
+
+        <div class="form-group row">
+          <label for="inputState" class="col-sm- col-form-label">Status Prodige </label>
+          <input id="inputState" type="text" [(ngModel)]="newSite.statusprodige" name="statusprodige" class="form-control">
+        </div>
+
+        <div class="form-group row">
+          <label for="inputState" class="col-sm- col-form-label">Eligibilité Version_Dsn </label>
+          <input id="inputState" type="text" [(ngModel)]="newSite.eligibiliteversiondsn" name="eligibiliteversiondsn" class="form-control">
+        </div>
+
+        <div class="form-group row">
+          <label for="inputState" class="col-sm- col-form-label">Nomenclatures </label>
+          <input id="inputState" type="text" [(ngModel)]="newSite.nomenclatures" name="nomenclatures" class="form-control">
+        </div>
+
+        <div class="form-group row">
+          <label for="inputState" class="col-sm- col-form-label">EG_EJ_ED_Agirh </label>
+          <input id="inputState" type="text" [(ngModel)]="newSite.egejedagirh" name="ejdansagirh" class="form-control">
+        </div>
+
+        <div class="form-group row">
+          <label for="inputState" class="col-sm- col-form-label">EG_EJ_Prodige </label>
+          <input id="inputState" type="text" [(ngModel)]="newSite.egejprodige" name="egejprodige" class="form-control">
+        </div>
+
+        <div class="form-group row">
+          <label for="inputState" class="col-sm- col-form-label">Paramètres_Géréraux Prodige </label>
+          <input id="inputState" type="text" [(ngModel)]="newSite.paramgeneprodige" name="par" class="form-control">
+        </div>
+
+        <div class="form-group row">
+          <label for="inputState" class="col-sm- col-form-label">Compte ultilisateur Prodige </label>
+          <input id="inputState" type="text" [(ngModel)]="newSite.compteutilprodige" name="compteutilprodige" class="form-control">
+        </div>
+
+        <div class="form-group row">
+          <label for="inputState" class="col-sm- col-form-label">Reprise Siren </label>
+          <input id="inputState" type="text" [(ngModel)]="newSite.reprisesiren" name="reprisesiren" class="form-control">
+        </div>
+
+        <div class="form-group row">
+          <label for="inputState" class="col-sm- col-form-label">Initialisation des contrats_PH7 </label>
+          <input id="inputState" type="text" [(ngModel)]="newSite.initcontratph7" name="initcontratph7" class="form-control">
+        </div>
+
+        <div class="form-group row">
+          <label for="inputState" class="col-sm- col-form-label">Notes </label>
+          <textarea id="inputState" type="text" [(ngModel)]="newSite.notes" name="notes" class="form-control"></textarea>
+        </div>
+      
+  
+        <div class="modal-footer">
+          <button type="submit" (click)="addconsulSite()" class="btn btn-success">Enregistrer</button>
+        </div>
+
+        <div class="modal-footer">
+          <button type="submit" routerLink="/sites" class="btn btn-warning">Bloc-notes</button>
+       </div>
+
+       <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Launch demo modal
+</button>
+
+        <div>
+          <h3>{{ message }}</h3>
+        </div>
+  
+      </form>
+    </div>
+  </div>

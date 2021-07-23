@@ -9,7 +9,7 @@
   <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
    
 <!-- Brand --> 
-<a class="navbar-brand" href="#">Gestion Sites</a>    
+<a class="navbar-brand" href="#">MiPih|Dashboard de suivi des installations DSN</a>    
 
 <!-- Links -->
   <ul class="navbar-nav">
@@ -21,7 +21,7 @@
   </a>
   <div class="dropdown-menu">
  
-     <a class="dropdown-item" routerLink="/sites">Tableau de bord</a>
+     <a class="dropdown-item" routerLink="/tableaudebord-site">Tableau de bord</a>
      <a class="dropdown-item" routerLink="/sit">Statistiques</a> 
   </div>
 </li>
@@ -35,7 +35,7 @@
   <div class="dropdown-menu">
      
     <a class="dropdown-item" routerLink="/listedif-site">Lister</a>
-    <a class="dropdown-item" routerLink="/add-site">Nouveau</a>  
+    <a class="dropdown-item" routerLink="/adddif-site">Nouveau</a>  
   </div>
 </li>
 
@@ -47,7 +47,7 @@
   <div class="dropdown-menu">
 
     <a class="dropdown-item" routerLink="//listecons-site">Lister</a>
-    <a class="dropdown-item" routerLink="/add-site">Nouveau</a> 
+    <a class="dropdown-item" routerLink="/addconsul-site">Nouveau</a> 
   </div>
 </li>
 
@@ -59,24 +59,41 @@
   <div class="dropdown-menu">
 
     <a class="dropdown-item" routerLink="/listeresp-site">Lister</a>
-    <a class="dropdown-item" routerLink="/add-site">Nouveau</a>  
+    <a class="dropdown-item" routerLink="/addresp-site">Nouveau</a>  
   </div>
 </li>
+
+<!-- Paramètres -->
+<li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+    Paramètres
+  </a>
+  <div class="dropdown-menu">
+     <a class="dropdown-item" routerLink="/sites">Mise à jour & suppression</a>
+  </div>
+</li>
+
 
   </ul>
 
 <ul class="navbar-nav ml-auto">
+  <li> 
+    <a class="nav-link">{{authService.loggedUser}}</a>
+  </li>
+
   <li class="nav-item dropdown"> 
     <a class="nav-link dropdown-toggle" href="#" id="navbardrop"
-       data-toggle="dropdown"> [Utilisateur] 
+       data-toggle="dropdown"> Connexion 
     </a>
-        
+      
 <div class="dropdown-menu"> 
-  <a class="dropdown-item" href="#">login</a> 
+
+  <a *ngIf="!authService.isloggedIn" class="dropdown-item" routerLink = "login">login</a> 
   
-  <a class="dropdown-item" href="#">logout</a> 
+  <a *ngIf="authService.isloggedIn" class="dropdown-item" (click) = "onLogout()">logout</a>
   
   <a class="dropdown-item" href="#">Profile</a> 
+  
 
 </div>
       </li>

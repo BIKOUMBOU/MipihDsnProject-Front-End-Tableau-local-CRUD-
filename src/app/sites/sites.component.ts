@@ -7,12 +7,15 @@ import { Site } from '../model/site.model';
 import { SiteService } from '../services/site.service';
 import { catchError, map, startWith } from 'rxjs/operators';
 
+
 @Component({
   selector: 'app-sites',
   templateUrl: './sites.component.html'
 })
 
+
 export class SitesComponent implements OnInit {
+
 
   sites: Site[]; //Un tableau de sites
   http: any;
@@ -29,6 +32,7 @@ export class SitesComponent implements OnInit {
 
 
 ngOnInit(): void {
+
   this.siteService.listerAllSites().subscribe(sites=>{
     console.log(sites)
       this.sites=sites;
@@ -58,14 +62,25 @@ AddSite(s: Site){
   this.router.navigateByUrl("/addSite")
 }
 
+AddconsulSite(s: Site){
+  this.router.navigateByUrl("/addSite")
+}
+
+AddrespSite(s: Site){
+  this.router.navigateByUrl("/addSite")
+}
+
+adddifSite(s: Site){
+  this.router.navigateByUrl("/addSite")
+}
+
 ListeSite(){
-  this.router.navigateByUrl("/listeSite")
+  this.router.navigateByUrl("/liste-Site")
 }
 
 updateSite(){
   this.router.navigateByUrl("/UpdateSite")
 }
-
 
 Update(s: Site) {
   this.router.navigateByUrl("/UpdateSite/"+s.id);

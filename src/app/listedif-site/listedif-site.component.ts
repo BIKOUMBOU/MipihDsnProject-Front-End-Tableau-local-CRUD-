@@ -47,7 +47,7 @@ ngOnInit(): void {
       console.log("site supprimé");
      }); 
       
-      this.router.navigate(['sites']).then(() => {
+      this.router.navigate(['listedif-site']).then(() => {
        window.location.reload();
      }); 
 }
@@ -58,20 +58,26 @@ AddSite(s: Site){
 }
 
 ListeSite(){
-  this.router.navigateByUrl("/listedif-site")
+  this.router.navigateByUrl("/listeSite")
 }
 
 updateSite(){
   this.router.navigateByUrl("/UpdateSite")
 }
 
-
 Update(s: Site) {
   this.router.navigateByUrl("/UpdateSite/"+s.id);
 }
 
+
+editdifSite(){
+  this.router.navigateByUrl("/listedif-site")
 }
 
+editdif(s: Site){
+  this.router.navigateByUrl("/listedif-site"+s.id)
+}
 
+}
 
 

@@ -1,95 +1,89 @@
-<nav class="navbar navbar-expand-sm bg-darck navbar-dark">
+<nav class="navbar navbar-dark sm-dark"> 
+    <div class="container-fluid">
+      <a class="navbar-brand"></a>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="rechercher ici" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Recherche</button>
+      </form>
+    </div>
+ </nav>
 
-    <!-- <ul class="navbar navbar-nav ml-auto">
-		<li>
-			<form #f="ngForm" (ngSubmit)="rechercherSites()" class="form-inline">
-				<div class="form-group">
-					<input ngModel name="keyword" type="text">
-					<button class="btn btn-sm btn-outline-info ml-2">
-						<span class="fa fa-search"></span>
-					</button>
-				</div>
-			</form>
-		</li>
-
-	</ul> -->
-
-</nav>
 
 
 <ng-container>
-    <div class="card-header -xl ">
-        <div class="table-responsive -xl">
+    <div class="card-header -xxl ">
+        <div class="table-responsive -xxl">
             <table id="dtHorizontalExample"
                 class="table table-hover table-striped table-bordered table-sm table-wrapper-scroll-y my-custom-scrollbar"
                 cellspacing="0" width="100%">
-                <thead class="center-thead-dark">
+                <thead class="thead-dark">
 
                     <tr>
 
                         <!-- --Diffuseurs techniques-- -->
 
-                        <th class="text-center th-sm"> Id </th>
-                        <th class="text-center th-sm"> Priorité </th>
-                        <th class="text-center th-sm"> Nom </th>
-                        <th class="text-center th-sm"> Siren </th>
-                        <th class="text-center th-sm"> StatusInstal </th>
-                        <th class="text-center th-sm"> Hebergement </th>
-                        <th class="text-center th-sm"> Acces </th>
-                        <th class="text-center th-sm"> ResProjet </th>
-                        <th class="text-center th-sm"> ConsulDsn </th>
-                        <th class="text-center th-sm"> VersAgirh </th>
-                        <th class="text-center th-sm"> VersProdige </th>
-                        <th class="text-center th-sm"> Ifp </th>
-                        <th class="text-center th-sm"> Mirth </th>
-                        <th class="text-center th-sm"> WebserPH7 </th>
-                        <th class="text-center th-sm"> ConfigAgirh </th>
-                        <th class="text-center th-sm"> ConfigProdige </th>
-                        <th class="text-center th-sm"> Param_Géné_Pro </th>
-                        <th class="text-center th-sm"> Créa_EG_EJ_ED_Agirh </th>
-                        <th class="text-center th-sm"> NomencdesAbsences </th>
-                        <th class="text-center th-sm"> NomencdesEmplois </th>
-                        <th class="text-center th-sm"> NomencdeStatuts </th>
-                        <th class="text-center">ACTIONS</th>
+                        <th class="p-2 bg-danger text-center th-lg"> Id </th>
+                        <th class="text-center th-lg"> Nom </th>
+                        <th class="text-center th-lg"> Priorité </th>
+                        <th class="text-center th-lg"> Siren </th>
+                        <th class="text-center th-lg"> StatusInstal </th>
+                        <th class="text-center th-lg"> Hebergement </th>
+                        <th class="text-center th-lg"> Acces </th>
+                        <th class="text-center th-lg"> ResProjet </th>
+                        <th class="text-center th-lg"> ConsulDsn </th>
+                        <th class="text-center th-lg"> VersAgirh </th>
+                        <th class="text-center th-lg"> VersProdige </th>
+                        <th class="text-center th-lg"> Ifp </th>
+                        <th class="text-center th-lg"> Mirth </th>
+                        <th class="text-center th-lg"> WebserPH7 </th>
+                        <th class="text-center th-lg"> ConfigAgirh </th>
+                        <th class="text-center th-lg"> ConfigProdige </th>
+                        <th class="text-center th-lg"> Param_Géné_Pro </th>
+                        <th class="text-center th-lg"> Créa_EG_EJ_ED_Agirh </th>
+                        <th class="text-center th-lg"> NomencdesAbsences </th>
+                        <th class="text-center th-lg"> NomencdesEmplois </th>
+                        <th class="text-center th-lg"> NomencdeStatuts </th>
+                        <th class="p-2 bg-danger text-center th-lg">ACTIONS</th>
                     </tr>
 
                 </thead>
                 <tbody>
 
-                    <tr *ngFor="let s of sites">
+                    <tr *ngFor="let site of sites">
 
                         <!-- --Diffuseurs techniques-- -->
 
-                        <td> {{s.id}} </td>
-                        <td> {{s.priorite}} </td>
-                        <td> {{s.nom}} </td>
-                        <td> {{s.siren}} </td>
-                        <td> {{s.statusinstal}} </td>
-                        <td> {{s.hebergement}} </td>
-                        <td> {{s.acces}} </td>
-                        <td> {{s.resprojet}} </td>
-                        <td> {{s.consuldsn}} </td>
-                        <td> {{s.versagirh}} </td>
-                        <td> {{s.versprodige}} </td>
-                        <td> {{s.ifp}} </td>
-                        <td> {{s.mirth}} </td>
-                        <td> {{s.webserph7}} </td>
-                        <td> {{s.configagirh}} </td>
-                        <td> {{s.configprodige}} </td>
-                        <td> {{s.paramgenepro}} </td>
-                        <td> {{s.creationegejed}} </td>
-                        <td> {{s.nomencdesabsences}} </td>
-                        <td> {{s.nomencdesemplois}} </td>
-                        <td> {{s.nomencdestatuts}} </td>
+                        <td> {{site.id}} </td>
+                        <td> {{site.nom}} </td>
+                        <td> {{site.priorite}} </td>
+                        <td> {{site.siren}} </td>
+                        <td> {{site.statusinstal}} </td>
+                        <td> {{site.hebergement}} </td>
+                        <td> {{site.acces}} </td>
+                        <td> {{site.resprojet}} </td>
+                        <td> {{site.consuldsn}} </td>
+                        <td> {{site.versagirh}} </td>
+                        <td> {{site.versprodige}} </td>
+                        <td> {{site.ifp}} </td>
+                        <td> {{site.mirth}} </td>
+                        <td> {{site.webserph7}} </td>
+                        <td> {{site.configagirh}} </td>
+                        <td> {{site.configprodige}} </td>
+                        <td> {{site.paramgenepro}} </td>
+                        <td> {{site.creationegejed}} </td>
+                        <td> {{site.nomencdesabsences}} </td>
+                        <td> {{site.nomencdesemplois}} </td>
+                        <td> {{site.nomencdestatuts}} </td>
 
                         <td>
-                            <button class="btn btn-info ml-2" [routerLink]="['/updateSite',site.id]">
+                            <button class="btn btn-warning ml-4" [routerLink]="['/updatedifSite',site.id]">
                                 <span class="fa fa-edit"></span>
                             </button>
 
-                            <button class="btn btn-danger ml-2" (click)="SupprimerSite(site.id)">
+
+                         <!--    <button class="btn btn-primary ml-4" (click)="SupprimerSite(site.id)">
                                 <span class="fa fa-trash-o"></span>
-                            </button>
+                            </button>  -->
 
                         </td>
 

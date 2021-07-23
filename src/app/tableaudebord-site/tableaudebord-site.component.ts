@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
 import { HttpErrorResponse } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
@@ -7,13 +7,13 @@ import { Site } from '../model/site.model';
 import { SiteService } from '../services/site.service';
 import { catchError, map, startWith } from 'rxjs/operators';
 
+
 @Component({
-  selector: 'app-listecons-site',
-  templateUrl: './listecons-site.component.html',
+  selector: 'app-tableaudebord-site',
+  templateUrl: './tableaudebord-site.component.html',
 })
 
-
-export class ListeconsSiteComponent implements OnInit {
+export class TableaudebordSiteComponent implements OnInit {
 
   sites: Site[]; //Un tableau de sites
   http: any;
@@ -49,7 +49,7 @@ ngOnInit(): void {
       console.log("site supprimé");
      }); 
       
-      this.router.navigate(['listecons-site']).then(() => {
+      this.router.navigate(['sites']).then(() => {
        window.location.reload();
      }); 
 }
@@ -59,14 +59,25 @@ AddSite(s: Site){
   this.router.navigateByUrl("/addSite")
 }
 
+AddconsulSite(s: Site){
+  this.router.navigateByUrl("/addSite")
+}
+
+AddrespSite(s: Site){
+  this.router.navigateByUrl("/addSite")
+}
+
+adddifSite(s: Site){
+  this.router.navigateByUrl("/addSite")
+}
+
 ListeSite(){
-  this.router.navigateByUrl("/listecons-site")
+  this.router.navigateByUrl("/liste-Site")
 }
 
 updateSite(){
   this.router.navigateByUrl("/UpdateSite")
 }
-
 
 Update(s: Site) {
   this.router.navigateByUrl("/UpdateSite/"+s.id);

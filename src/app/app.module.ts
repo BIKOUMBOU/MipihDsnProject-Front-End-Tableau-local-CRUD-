@@ -12,6 +12,16 @@ import { UpdateSiteComponent } from './update-site/update-site.component';
 import { ListedifSiteComponent } from './listedif-site/listedif-site.component';
 import { ListeconsSiteComponent } from './listecons-site/listecons-site.component';
 import { ListerespSiteComponent } from './listeresp-site/listeresp-site.component';
+import { AdddifSiteComponent } from './adddif-site/adddif-site.component';
+import { AddconsulSiteComponent } from './addconsul-site/addconsul-site.component';
+import { AddrespSiteComponent } from './addresp-site/addresp-site.component';
+import { EditrespSiteComponent } from './editresp-site/editresp-site.component';
+import { EditconsulSiteComponent } from './editconsul-site/editconsul-site.component';
+import { EditdifSiteComponent } from './editdif-site/editdif-site.component';
+import { TableaudebordSiteComponent } from './tableaudebord-site/tableaudebord-site.component';
+import { LoginComponent } from './login/login.component';
+import { Editableau2bordComponent } from './editableau2bord/editableau2bord.component';
+
 
 
 
@@ -27,6 +37,15 @@ import { ListerespSiteComponent } from './listeresp-site/listeresp-site.componen
     ListedifSiteComponent,
     ListeconsSiteComponent,
     ListerespSiteComponent,
+    AdddifSiteComponent,
+    AddconsulSiteComponent,
+    AddrespSiteComponent,
+    EditrespSiteComponent,
+    EditconsulSiteComponent,
+    EditdifSiteComponent,
+    TableaudebordSiteComponent,
+    LoginComponent,
+    Editableau2bordComponent,
   
     
   ],
@@ -38,7 +57,7 @@ import { ListerespSiteComponent } from './listeresp-site/listeresp-site.componen
     RouterModule,
     FormsModule,
     HttpClientModule,
-
+  
   ],
 
 
